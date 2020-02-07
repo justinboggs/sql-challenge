@@ -53,3 +53,12 @@ select * from dept_manager
 select * from employees
 select * from salaries
 select * from titles
+
+select a.emp_no, a.last_name, a.first_name, a.gender, b.salary
+from employees a
+join salaries b
+on (a.emp_no = b.emp_no)
+
+select last_name, first_name, hire_date
+from employees
+where hire_date >= '1986-01-01' AND hire_date <= '1986-12-31'
