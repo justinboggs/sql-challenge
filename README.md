@@ -94,8 +94,10 @@ Evidence in hand, you march into your boss's office and present the visualizatio
 
 # Grading Rubric
 
+
+
 ## Data Modeling
-ERD  
+ERD:  
 Correct column names  
 Correct corresponding data types  
 Primary keys set  
