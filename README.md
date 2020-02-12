@@ -95,16 +95,16 @@ Evidence in hand, you march into your boss's office and present the visualizatio
   
   
   
-# Grading Rubric
+## Grading Rubric
 
-## Data Modeling
+### Data Modeling
 ERD:  
 Correct column names  
 Correct corresponding data types  
 Primary keys set  
 Foreign keys correctly related  
 
-## Data Engineering
+### Data Engineering
 Schemas run with the following:  
 All required columns  
 Columns set to the correct data type  
@@ -113,12 +113,12 @@ Foreign keys correctly related
 NOT NULL used correctly  
 Define value length for columns  
 
-## Data Analysis
+### Data Analysis
 Queries for all questions and:  
 Queries provide expected result  
 Queries run without error  
 
-## Bonus
+### Bonus
 Queries tables from postgres db to pandas df  
 Replaces NULL values  
 Generates average salary bar chart  
