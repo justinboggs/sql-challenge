@@ -5,82 +5,81 @@
 --DROP TABLE IF EXISTS salaries;
 --DROP TABLE IF EXISTS titles;
 
-CREATE TABLE departments (
-	dept_no varchar NOT NULL,
-	dept_name varchar NOT NULL
+CREATE TABLE "departments" (
+    "dept_no" varchar   NOT NULL,
+    "dept_name" varchar   NOT NULL,
+    CONSTRAINT "pk_departments" PRIMARY KEY (
+        "dept_no"
+     )
 );
 
-CREATE TABLE dept_emp (
-	emp_no int NOT NULL,
-	dept_no varchar NOT NULL,
-	from_date date NOT NULL,
-	to_date date NOT NULL
+CREATE TABLE "dept_emp" (
+    "id" serial   NOT NULL,
+    "emp_no" int   NOT NULL,
+    "dept_no" varchar   NOT NULL,
+    "from_date" date   NOT NULL,
+    "to_date" date   NOT NULL,
+    CONSTRAINT "pk_dept_emp" PRIMARY KEY (
+        "id"
+     )
 );
 
-CREATE TABLE dept_manager (
-	dept_no varchar NOT NULL,
-	emp_no int NOT NULL,
-	from_date date NOT NULL,
-	to_date date NOT NULL
+CREATE TABLE "dept_manager" (
+    "id" serial   NOT NULL,
+    "dept_no" varchar   NOT NULL,
+    "emp_no" int   NOT NULL,
+    "from_date" date   NOT NULL,
+    "to_date" date   NOT NULL,
+    CONSTRAINT "pk_dept_manager" PRIMARY KEY (
+        "id"
+     )
 );
 
-CREATE TABLE employees (
-	emp_no int NOT NULL,
-	birth_date date NOT NULL,
-	first_name varchar NOT NULL,
-	last_name varchar NOT NULL,
-	gender varchar NOT NULL, 
-	hire_date date NOT NULL
+CREATE TABLE "employees" (
+    "emp_no" int   NOT NULL,
+    "birth_date" date   NOT NULL,
+    "first_name" varchar   NOT NULL,
+    "last_name" varchar   NOT NULL,
+    "gender" varchar   NOT NULL,
+    "hire_date" date   NOT NULL,
+    CONSTRAINT "pk_employees" PRIMARY KEY (
+        "emp_no"
+     )
 );
 
-CREATE TABLE salaries (
-	emp_no int NOT NULL,
-	salary int NOT NULL,
-	from_date date NOT NULL,
-	to_date date NOT NULL
+CREATE TABLE "salaries" (
+    "id" serial   NOT NULL,
+    "emp_no" int   NOT NULL,
+    "salary" int   NOT NULL,
+    "from_date" date   NOT NULL,
+    "to_date" date   NOT NULL,
+    CONSTRAINT "pk_salaries" PRIMARY KEY (
+        "id"
+     )
 );
 
-CREATE TABLE titles (
-	emp_no int NOT NULL,
-	title varchar NOT NULL,
-	from_date date NOT NULL,
-	to_date date NOT NULL
+CREATE TABLE "titles" (
+    "id" serial   NOT NULL,
+    "emp_no" int   NOT NULL,
+    "title" varchar   NOT NULL,
+    "from_date" date   NOT NULL,
+    "to_date" date   NOT NULL,
+    CONSTRAINT "pk_titles" PRIMARY KEY (
+        "id"
+     )
 );
 
-select * from departments
-select * from dept_emp
-select * from dept_manager
-select * from employees
-select * from salaries
-select * from titles
+ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
---Employee number, last name, first name, gender, salary
-select a.emp_no, a.last_name, a.first_name, a.gender, b.salary
-from employees a
-join salaries b
-on (a.emp_no = b.emp_no)
+ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_dept_no" FOREIGN KEY("dept_no")
+REFERENCES "departments" ("dept_no");
 
---Employees hired in 1986
-select last_name, first_name, hire_date
-from employees
-where hire_date >= '1986-01-01' AND hire_date <= '1986-12-31'
+ALTER TABLE "dept_manager" ADD CONSTRAINT "fk_dept_manager_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
---Manager of each department
-select c.last_name, c.first_name
-from employees c
-join dept_manager b
-on (c.emp_no = b.emp_no)
+ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
 
-select a.dept_no, b.dept_name, a.emp_no, a.from_date, a.to_date
-from dept_manager a
-join departments b
-on (a.dept_no = b.dept_no)
-
---manager of each department
-select last_name, first_name
-from employees
-where emp_no in
-	(
-	select emp_no
-	from dept_manager
-	)
+ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_emp_no" FOREIGN KEY("emp_no")
+REFERENCES "employees" ("emp_no");
