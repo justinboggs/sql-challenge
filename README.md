@@ -92,31 +92,31 @@ Evidence in hand, you march into your boss's office and present the visualizatio
 
 * Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
 
-## Grading Rubric
+# Grading Rubric
 
-# Data Modeling
-ERD
-Correct column names
-Correct corresponding data types
-Primary keys set
-Foreign keys correctly related
+## Data Modeling
+ERD  
+Correct column names  
+Correct corresponding data types  
+Primary keys set  
+Foreign keys correctly related  
 
-# Data Engineering
-Schemas run with the following:
-All required columns
-Columns set to the correct data type
-Primary key for each table
-Foreign keys correctly related
-NOT NULL used correctly
-Define value length for columns
+## Data Engineering
+Schemas run with the following:  
+All required columns  
+Columns set to the correct data type  
+Primary key for each table  
+Foreign keys correctly related  
+NOT NULL used correctly  
+Define value length for columns  
 
-# Data Analysis
-Queries for all questions and:
-Queries provide expected result
-Queries run without error
+## Data Analysis
+Queries for all questions and:  
+Queries provide expected result  
+Queries run without error  
 
-# Bonus
-Queries tables from postgres db to pandas df
-Replaces NULL values
-Generates average salary bar chart
-Plot has titles and axes labels
+## Bonus
+Queries tables from postgres db to pandas df  
+Replaces NULL values  
+Generates average salary bar chart  
+Plot has titles and axes labels  
