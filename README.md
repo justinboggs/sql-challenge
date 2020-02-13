@@ -48,7 +48,7 @@ Once you have a complete database, do the following:
 
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 
-5. List all employees whose first name is "Hercules" and last names begin with "B."
+√ 5. List all employees whose first name is "Hercules" and last names begin with "B."
 
 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
