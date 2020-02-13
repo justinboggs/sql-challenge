@@ -1,95 +1,11 @@
--- Drop tables if already exist
+-- Data Analysis
+-- 1. List the following details of each employee: employee number, last name, first name, gender, and salary.
+select a.emp_no, a.last_name, a.first_name, a.gender, b.salary
+from employees a
+join salaries b
+on (a.emp_no = b.emp_no)
 
---DROP TABLE IF EXISTS departments;
---DROP TABLE IF EXISTS dept_emp;
---DROP TABLE IF EXISTS dept_manager;
---DROP TABLE IF EXISTS employees;
---DROP TABLE IF EXISTS salaries;
---DROP TABLE IF EXISTS titles;
-
-------------------------------------------------
--- Create tables
-
-CREATE TABLE "departments" (
-    "dept_no" varchar   NOT NULL,
-    "dept_name" varchar   NOT NULL,
-    CONSTRAINT "pk_departments" PRIMARY KEY (
-        "dept_no"
-     )
-);
-
-CREATE TABLE "dept_emp" (
-    "id" serial   NOT NULL,
-    "emp_no" int   NOT NULL,
-    "dept_no" varchar   NOT NULL,
-    "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL,
-    CONSTRAINT "pk_dept_emp" PRIMARY KEY (
-        "id"
-     )
-);
-
-CREATE TABLE "dept_manager" (
-    "id" serial   NOT NULL,
-    "dept_no" varchar   NOT NULL,
-    "emp_no" int   NOT NULL,
-    "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL,
-    CONSTRAINT "pk_dept_manager" PRIMARY KEY (
-        "id"
-     )
-);
-
-CREATE TABLE "employees" (
-    "emp_no" int   NOT NULL,
-    "birth_date" date   NOT NULL,
-    "first_name" varchar   NOT NULL,
-    "last_name" varchar   NOT NULL,
-    "gender" varchar   NOT NULL,
-    "hire_date" date   NOT NULL,
-    CONSTRAINT "pk_employees" PRIMARY KEY (
-        "emp_no"
-     )
-);
-
-CREATE TABLE "salaries" (
-    "id" serial   NOT NULL,
-    "emp_no" int   NOT NULL,
-    "salary" int   NOT NULL,
-    "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL,
-    CONSTRAINT "pk_salaries" PRIMARY KEY (
-        "id"
-     )
-);
-
-CREATE TABLE "titles" (
-    "id" serial   NOT NULL,
-    "emp_no" int   NOT NULL,
-    "title" varchar   NOT NULL,
-    "from_date" date   NOT NULL,
-    "to_date" date   NOT NULL,
-    CONSTRAINT "pk_titles" PRIMARY KEY (
-        "id"
-     )
-);
-
-------------------------------------------------
--- Alter tables to set foreign keys
-
-ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "employees" ("emp_no");
-
-ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_dept_no" FOREIGN KEY("dept_no")
-REFERENCES "departments" ("dept_no");
-
-ALTER TABLE "dept_manager" ADD CONSTRAINT "fk_dept_manager_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "employees" ("emp_no");
-
-ALTER TABLE "salaries" ADD CONSTRAINT "fk_salaries_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "employees" ("emp_no");
-
-ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_emp_no" FOREIGN KEY("emp_no")
-REFERENCES "employees" ("emp_no");
-
-------------------------------------------------
+-- 2. List employees who were hired in 1986.
+select last_name, first_name, hire_date
+from employees
+where hire_date >= '1986-01-01' and hire_date <= '1986-12-31'
