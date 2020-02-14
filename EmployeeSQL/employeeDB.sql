@@ -39,7 +39,6 @@ join departments c
 on (b.dept_no = c.dept_no)
 where c.dept_name = 'Sales'
 
-
 -- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 select a.emp_no, a.last_name, a.first_name, c.dept_name
 from employees a
