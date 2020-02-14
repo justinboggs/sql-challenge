@@ -11,13 +11,25 @@ from employees
 where hire_date >= '1986-01-01' and hire_date <= '1986-12-31'
 
 -- 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
-
+select a.dept_no, c.dept_name, a.emp_no, b.last_name, b.first_name, a.from_date, a.to_date
+from dept_manager a
+join departments c
+on (a.dept_no = c.dept_no)
+join employees b
+on (a.emp_no = b.emp_no)
 
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 
 -- 5. List all employees whose first name is "Hercules" and last names begin with "B."
 
 -- 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+select a.emp_no, a.last_name, a.first_name, c.dept_name
+from employees a
+join dept_emp b
+on (a.emp_no = b.emp_no)
+join departments c
+on (b.dept_no = c.dept_no)
+where c.dept_name = 'Sales'
 
 -- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 

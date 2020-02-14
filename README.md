@@ -44,13 +44,13 @@ Once you have a complete database, do the following:
 
 √ 2. List employees who were hired in 1986.
 
-3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
+√ 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name, and start and end employment dates.
 
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 
 √ 5. List all employees whose first name is "Hercules" and last names begin with "B."
 
-6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
+√ 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
