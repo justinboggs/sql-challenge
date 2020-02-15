@@ -1,17 +1,17 @@
 # SQL Homework - Employee Database: A Mystery in Two Parts
 
-## Instructions and Conclusions
-This repository works as follows. The EmployeeSQL folder holds all files and folders related to this activity. The foles contined herein are the following:
+## Instructions
+This repository works as follows. The EmployeeSQL folder holds all files and folders related to this activity. The folders contained herein are the following:
 
 QuickDBD-employeeDB.png - this is the .png file of the ERD diagram.
-createTabes.sql - this .sql file contains the schema for creating the table and assigning keys.
+createTables.sql - this .sql file contains the schema for creating the table and assigning keys.
 queries.sql - this .sql file contains the schema for running all queries related to the employeeDB files.
 
 employeeDBbonus.ipynb - This jupyter notebook file runs the code for the histogram and bar chart.
 output_files - this folder contains the histogram and bar chart created by the above file.
 
 ## Conclusion
-Yes this datset is like fake. The name my id number pulls up is "April Foolsday."
+Yes, this datset is likely fake. The name my id number pulls up is "April Foolsday."
 
 ## Background
 
