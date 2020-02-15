@@ -1,5 +1,18 @@
 # SQL Homework - Employee Database: A Mystery in Two Parts
 
+## Instructions and Conclusions
+This repository works as follows. The EmployeeSQL folder holds all files and folders related to this activity. The foles contined herein are the following:
+
+QuickDBD-employeeDB.png - this is the .png file of the ERD diagram.
+createTabes.sql - this .sql file contains the schema for creating the table and assigning keys.
+queries.sql - this .sql file contains the schema for running all queries related to the employeeDB files.
+
+employeeDBbonus.ipynb - This jupyter notebook file runs the code for the histogram and bar chart.
+output_files - this folder contains the histogram and bar chart created by the above file.
+
+## Conclusion
+Yes this datset is like fake. The name my id number pulls up is "April Foolsday."
+
 ## Background
 
 It is a beautiful spring day, and it is two weeks since you have been hired as a new data engineer at Pewlett Hackard. Your first major task is a research project on employees of the corporation from the 1980s and 1990s. All that remain of the database of employees from that period are six CSV files.
@@ -79,7 +92,6 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 ## Epilogue
 
 √ Evidence in hand, you march into your boss's office and present the visualization. With a sly grin, your boss thanks you for your work. On your way out of the office, you hear the words, "Search your ID number." You look down at your badge to see that your employee ID number is 499942.
-"April Foolsday"
 
 ## Submission
 
@@ -89,13 +101,13 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 
 √ * Create a `.sql` file of your queries.
 
-* (Optional) Create a Jupyter Notebook of the bonus analysis.
+√ * (Optional) Create a Jupyter Notebook of the bonus analysis.
 
-* Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
+√ * Create and upload a repository with the above files to GitHub and post a link on BootCamp Spot.
   
 ## Grading Rubric
 
-#### √ Data Modeling
+#### Data Modeling
 √ ERD:  
 √ Correct column names  
 √ Correct corresponding data types  
@@ -103,21 +115,21 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 √ Foreign keys correctly related  
 
 #### Data Engineering
-Schemas run with the following:  
-All required columns  
-Columns set to the correct data type  
-Primary key for each table  
-Foreign keys correctly related  
-NOT NULL used correctly  
-Define value length for columns  
+√ Schemas run with the following:  
+√ All required columns  
+√ Columns set to the correct data type  
+√ Primary key for each table  
+√ Foreign keys correctly related  
+√ NOT NULL used correctly  
+√ Define value length for columns  
 
 #### Data Analysis
-Queries for all questions and:  
-Queries provide expected result  
-Queries run without error  
+√ Queries for all questions and:  
+√ Queries provide expected result  
+√ Queries run without error  
 
 #### Bonus
-Queries tables from postgres db to pandas df  
-Replaces NULL values  
-Generates average salary bar chart  
-Plot has titles and axes labels  
+√ Queries tables from postgres db to pandas df  
+√ Replaces NULL values  
+√ Generates average salary bar chart  
+√ Plot has titles and axes labels  
