@@ -11,7 +11,7 @@ employeeDBbonus.ipynb - This jupyter notebook file runs the code for the histogr
 output_files - this folder contains the histogram and bar chart created by the above file.
 
 ## Conclusion
-Yes, this datset is likely fake. The name my id number pulls up is "April Foolsday."
+Yes, this dataset is likely fake. The name my id number pulls up is "April Foolsday."
 
 ## Background
 
